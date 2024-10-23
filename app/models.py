@@ -7,7 +7,13 @@ class Tree(models.Model):
     name = models.CharField(max_length=225 , default='', blank=True, null=True)
     tree_id = models.CharField(max_length=255, blank=True, null=True)
     location_name = models.CharField(max_length=255, blank=True)
-    location = models.CharField(max_length=255, blank=True, null=True)
+    location = models.JSONField(blank=True, null=True, default=dict)
+    """
+        {
+            'lat': 0.0,
+            'long': 0.0
+        }
+    """
     image_index = models.SmallIntegerField(null=True, blank=True) # Index of the image to use
     level = models.IntegerField(default=0, null=True, blank=True)
     

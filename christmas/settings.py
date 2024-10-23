@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig'
+    'app.apps.AppConfig',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'christmas.wsgi.application'
-
+ASGI_APPLICATION = 'christmas.asgi.application' # For ASGI Websockets
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

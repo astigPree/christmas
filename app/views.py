@@ -1,19 +1,21 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 
 from .models import Tree , Envelope
 
 # Create your views here.
 
-class TreeListView(ListView):
-    model = Tree
-    template_name = 'treelistview/index.html'
+def list_of_trees(request):
+    context = {}
     
-    def get_queryset(self) -> QuerySet[Any]:
-        return Tree.objects.filter(is_found=True).order_by('-found_at')
-
+    try:
+        
+        trees = Tree.objects.all()
+        context['trees'] = [tree.get_information() for tree in trees]
     
-
-
+    except Exception as e:
+        pass
+    
+    return render(request, 'list_of_trees/index.html', context)
