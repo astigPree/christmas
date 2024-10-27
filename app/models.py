@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
-
+from . import models_utils
 
 # Create your models here.
 
@@ -78,6 +78,14 @@ class Tree(models.Model):
                 envelope.get_information() for envelope in envelopes
             ]
         }
+        
+    def get_distance_of_user(self, lat, long):
+        return models_utils.haversine(self.location['lat'], self.location['long'], lat, long)
+    
+    def is_user_in_range(self, lat, long):
+        return models_utils.is_within_15_meters(self.location['lat'], self.location['long'], lat, long)
+    
+    
 
 
 class Envelope(models.Model):

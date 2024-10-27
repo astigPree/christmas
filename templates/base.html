@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    
+    <style>
+        .kavoon-regular {
+            font-family: "Kavoon", serif;
+            font-weight: 400;
+            font-style: normal;
+          }
+          
+    </style>
+
+    {% block head_block %}
+        
+        <title>Document</title>    
+    {% endblock head_block %}
+    
+
+    
+</head>
+<body>
+
+    <main>
+        <aside>
+
+        </aside>
+
+        <section>
+            {% block content_block %}
+                
+            {% endblock content_block %}
+        </section>
+
+        <aside>
+
+        </aside>
+
+    </main>
+
+
+    
+</body>
+</html>

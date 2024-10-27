@@ -7,7 +7,7 @@ from django.utils import timezone
 from .models import Tree , Envelope, TemporaryUser
 
 from uuid import uuid4
-
+    
 # Create your views here.
 
 def list_of_trees(request):
