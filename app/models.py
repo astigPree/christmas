@@ -1,6 +1,24 @@
 from django.db import models
 
+from django.utils import timezone
+
+
+
+
 # Create your models here.
+
+
+class TemporaryUser(models.Model):
+    user_id = models.CharField(max_length=255, blank=True, null=True)
+    expires_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    
+    def __str__(self) -> str:
+        return f"{self.user_id} - {self.expires_at}"
+    
+    def remove_if_expired(self):
+        if self.expires_at < timezone.now():
+            self.delete()
+            
 
 class Tree(models.Model):
     
@@ -37,6 +55,17 @@ class Tree(models.Model):
             'created_at': self.created_at,
             'found_at' : self.found_at,
         }
+    
+    
+    def get_not_found_information(self):
+        return {
+            'name': self.name,
+            'tree_id': self.tree_id, 
+            'image_index': self.image_index, 
+            'level' : self.level,
+            'created_at': self.created_at,
+        }
+    
     
     def get_number_of_envelope(self):
         envelope_count = Envelope.objects.filter(tree_id=self.tree_id).count()
