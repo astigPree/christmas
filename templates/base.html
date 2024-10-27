@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="{% static 'base_styles.css' %}">
+    <script src="{% static 'base_scripts.js' %}" defer></script>
+
     <style>
         .kavoon-regular {
             font-family: "Kavoon", serif;
@@ -18,8 +23,7 @@
     </style>
 
     {% block head_block %}
-        
-        <title>Document</title>    
+         
     {% endblock head_block %}
     
 

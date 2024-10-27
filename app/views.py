@@ -7,11 +7,13 @@ from django.utils import timezone
 from .models import Tree , Envelope, TemporaryUser
 
 from uuid import uuid4
-    
+
 # Create your views here.
 
 def list_of_trees(request):
-    context = {}
+    context = {
+        'has_error' : False
+    }
     
     try:
         
@@ -33,7 +35,8 @@ def list_of_trees(request):
         
     
     except Exception as e:
-        pass
+        print(f"[] Error : {e}[]")
+        context['has_error'] = True
     
     return render(request, 'list_of_trees/index.html', context)
 
