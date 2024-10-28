@@ -29,8 +29,8 @@ def list_of_trees(request):
             request.session['user_id'] = user.user_id
         
         context = {
-            'found_trees' : found_trees,
-            'not_found_trees' : not_found_trees
+            'found_trees' : [tree.get_information() for tree in found_trees],
+            'not_found_trees' : [tree.get_not_found_information() for tree in not_found_trees]
         }
         
     

@@ -1,4 +1,104 @@
 
 main{
-    
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+aside{
+    width: 0%;
+    height: 100svh;
+}
+
+
+section{
+    width: 320px;
+    height: 100svh;
+    display: flex;
+    flex-direction: column; 
+}
+
+
+
+.background-image {
+    width: clamp(900px, 100%, 100%);
+    height: 100vh; /* Ensure the height stays fixed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Ensure it's behind the overlay */
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    justify-self: center;
+}
+
+
+
+.background-image-cover {
+    background-color: #635421;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .50;
+    z-index: -1; /* Ensure it's in front of the image */
+}
+
+
+
+
+.loading-screen{
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.loading-screen-container{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    row-gap: 12px;
+}
+
+.loading-screen-container img{
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.575));
+}
+
+.loading-screen-container p{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    width: 320px; 
+    word-break: break-all;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: -1px -1px 0 #fffdfd,  
+                 1px -1px 0 #fffdfd,
+                 -1px 1px 0 #fffdfd,
+                 1px 1px 0 #fffdfd;
+    letter-spacing: 1px;
+}
+
+
+.hide-loading{
+    display: none;
 }

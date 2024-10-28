@@ -63,6 +63,10 @@ addEventListener('DOMContentLoaded', function() {
 
     }
 
+
+    const loading = document.querySelector('.loading-screen');
+    loading.classList.add('hide-loading');
+
 })
 
 

@@ -4,12 +4,67 @@
 
 {% block head_block %}
     <title> CHRISTMAS TREES </title>
+    <link rel="stylesheet" href="{% static 'css/list_of_trees/styles.css' %}">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
 {% endblock head_block %}
     
 
 
 {% block content_block %}
     
+    <div class="app-top-bar">
+        <img src="{% static 'media/loading-icon.webp' %}" alt="icon" class="app-icon">
+        <h1 class="app-title kavoon"> Merry Christmas Masbate </h1>
+    </div>
+
+    <nav class="app-nav">
+        <ul>
+            <li class="kavoon app-nav-click">
+                Lahat
+            </li>
+            <li class="kavoon">
+                Found
+            </li>
+            <li class="kavoon">
+                Hiding
+            </li>
+        </ul>
+    </nav>
+
+    <div class="divider"></div>
+
+    <div class="based-container">
+        <div class="container">
+            
+            <div class="trees">
+                
+                {% for tree in found_trees %}
+                    <img src="{% static 'media/tree-' %}{{ tree.image_index }}" alt="{{tree.name}}">
+                {% endfor %}
+                    
+            </div>
+
+            <div class="trees">
+                
+                {% for tree in found_trees %}
+                    <img src="{% static 'media/tree-' %}{{ tree.image_index }}" alt="{{tree.name}}">
+                {% endfor %}
+                    
+            </div>
+
+
+        </div>
+    </div>
+
+    
+
+
 {% endblock content_block %}
     
 

@@ -14,11 +14,16 @@
     <script src="{% static 'base_scripts.js' %}" defer></script>
 
     <style>
-        .kavoon-regular {
+        .kavoon {
             font-family: "Kavoon", serif;
             font-weight: 400;
             font-style: normal;
           }
+
+        body{
+            padding : 0;
+            margin: 0;
+        }
           
     </style>
 
@@ -31,8 +36,21 @@
 </head>
 <body>
 
-    <main>
-        <aside>
+    <img src="{% static 'media/background-image.webp' %}" alt="background-image" class="background-image">
+    <div class="background-image-cover"></div>
+
+    <div class="loading-screen">
+
+        <div class="loading-screen-container">
+            <img src="{% static 'media/loading-icon.webp' %}" alt="">
+            <p class="kavoon">Merry Christmas Masbate</p>
+        </div>
+
+    </div>
+
+
+    <main class="main-container">
+        <aside class="left-side">
 
         </aside>
 
@@ -42,7 +60,7 @@
             {% endblock content_block %}
         </section>
 
-        <aside>
+        <aside class="right-side">
 
         </aside>
 

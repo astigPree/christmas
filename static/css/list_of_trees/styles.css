@@ -1,0 +1,122 @@
+.app-top-bar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+
+.app-icon{
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(2px 2px 2px gray);
+}
+
+.app-title {
+    flex: 1;
+    font-size: 16px;
+    color: #F3F57C;
+    text-shadow: -1px -1px 0 #f90303,  
+                 1px -1px 0 #f90303,
+                 -1px 1px 0 #f90303,
+                 1px 1px 0 #f90303;
+    letter-spacing: 1px;
+}
+
+
+
+.app-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    align-self: center;
+}
+
+.app-nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 16px;
+    width: 100%;
+}
+
+.app-nav li{
+    background-color: #08B9FF;
+    width: 54px;
+    padding: 8px;
+    border-radius: 8px;
+    color: #7F0000;
+    font-size: 16px;
+    border: 2px solid #F3F57C;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.app-nav li:hover{
+    background-color: #F3F57C;
+    color: #08B9FF;
+}
+
+.app-nav-click{
+    opacity: 0.5;
+}
+
+
+.divider{
+    background-color: #FCFF3C;
+    height: 3px;
+    width: 280px;
+    margin-top: 8px;
+    border-radius: 2px;
+    align-self: center;
+}
+
+.based-container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    height: 50svh;
+    background-color: rebeccapurple;
+    align-self: center;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+
+.trees{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    column-gap: 16px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
