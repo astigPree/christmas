@@ -45,15 +45,18 @@
             <div class="trees">
                 
                 {% for tree in found_trees %}
-                    <img src="{% static 'media/tree-' %}{{ tree.image_index }}" alt="{{tree.name}}">
+                    <div class="tree">
+                        <img src="{% static 'media/tree-' %}{{ tree.image_index }}.svg" alt="{{tree.name}}">
+                        <p class="tree-name kavoon">{{tree.name}}</p>
+                    </div>
                 {% endfor %}
                     
             </div>
 
             <div class="trees">
                 
-                {% for tree in found_trees %}
-                    <img src="{% static 'media/tree-' %}{{ tree.image_index }}" alt="{{tree.name}}">
+                {% for tree in not_found_trees %}
+                    <img src="{% static 'media/unknown.svg' %}" alt="{{tree.name}}">
                 {% endfor %}
                     
             </div>

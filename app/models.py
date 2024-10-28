@@ -28,9 +28,10 @@ class Tree(models.Model):
     location = models.JSONField(blank=True, null=True, default=dict)
     """
         {
-            'lat': 0.0,
-            'long': 0.0
+            "latitude": 12.375345854355354, 
+            "longitude": 123.63267251258442
         }
+
     """
     image_index = models.SmallIntegerField(null=True, blank=True) # Index of the image to use
     level = models.IntegerField(default=0, null=True, blank=True)
@@ -42,7 +43,7 @@ class Tree(models.Model):
     
     
     def __str__(self) -> str:
-        return f"{self.name} - {self.location}"
+        return f"{self.name if self.name else '[ Hidden ]'} - {self.image_index} - {self.location_name} - {self.location}"
     
     def get_information(self):
         return {
