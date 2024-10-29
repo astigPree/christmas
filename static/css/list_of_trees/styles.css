@@ -86,8 +86,9 @@
     display: flex;
     flex-direction: column;   
     flex-wrap: wrap;
-    height: 50svh;
-    align-self: center; 
+    height: 60svh;
+    align-self: center;
+    overflow-y: scroll ;
 }
 
 .container{
@@ -105,14 +106,20 @@
 .trees{
     display: flex;
     flex-direction: row;
-    column-gap: 16px;
+    column-gap: 8px;
     flex-wrap: wrap;
     row-gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .trees img{ 
     cursor: pointer; 
     filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+    align-self: center;
+    justify-self: center;
+    width: 80px;
+    height: 80px;
 }
 
 .tree{
@@ -121,6 +128,7 @@
     align-items: center;
     justify-content: center;
     row-gap: 8px ;
+
 }
 
 .tree-name{
@@ -131,6 +139,29 @@
                  -1px 1px 0 #F3F57C,
                  1px 1px 0 #F3F57C;
     letter-spacing: 1px;
+    text-align: center;
 }
+
+
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: fit-content;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.button-container img{
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.hide{
+    display: none;
+}
+
 
 

@@ -5,6 +5,7 @@
 {% block head_block %}
     <title> CHRISTMAS TREES </title>
     <link rel="stylesheet" href="{% static 'css/list_of_trees/styles.css' %}">
+    <script src="{% static 'scripts/list_of_trees/scripts.js' %}"></script>
     <style>
         *{
             margin: 0;
@@ -25,13 +26,13 @@
 
     <nav class="app-nav">
         <ul>
-            <li class="kavoon app-nav-click">
+            <li class="kavoon app-nav-click" id="all-trees">
                 Lahat
             </li>
-            <li class="kavoon">
+            <li class="kavoon" id="found-trees">
                 Found
             </li>
-            <li class="kavoon">
+            <li class="kavoon" id="not-found-trees">
                 Hiding
             </li>
         </ul>
@@ -42,10 +43,10 @@
     <div class="based-container">
         <div class="container">
             
-            <div class="trees">
+            <div class="trees" id="list-of-found-trees">
                 
                 {% for tree in found_trees %}
-                    <div class="tree">
+                    <div class="tree" >
                         <img src="{% static 'media/tree-' %}{{ tree.image_index }}.svg" alt="{{tree.name}}">
                         <p class="tree-name kavoon">{{tree.name}}</p>
                     </div>
@@ -53,7 +54,7 @@
                     
             </div>
 
-            <div class="trees">
+            <div class="trees" id="list-of-not-found-trees">
                 
                 {% for tree in not_found_trees %}
                     <img src="{% static 'media/unknown.svg' %}" alt="{{tree.name}}">
@@ -65,6 +66,9 @@
         </div>
     </div>
 
+    <div class="button-container">
+        <img src="{% static 'media/map-button.svg' %}" alt="map icon">
+    </div>
     
 
 
