@@ -39,13 +39,13 @@
     <img src="{% static 'media/background-image.webp' %}" alt="background-image" class="background-image">
     <div class="background-image-cover"></div>
 
-    {% comment %} <div class="pop-up-screens">
+    <div class="pop-up-screens close-pop-up" id="pop-up-screen">
         <div class="pop-up-content">
-            <img src="{% static 'media/search-icon.svg' %}" alt="search-icon">
-            <p>Naghahanap ng Christmas Tree</p>
-            <button></button>
+            <img class="search-icon" src="{% static 'media/search-icon.svg' %}" alt="search-icon">
+            <p class="kavoon">Naghahanap ng Christmas Tree</p>
+            <button class="kavoon" id="stop-searching"> ITIGIL </button>
         </div>
-    </div> {% endcomment %}
+    </div>
 
 
     <div class="loading-screen">

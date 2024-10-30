@@ -1,9 +1,31 @@
 
 let WebSocketHasError = false;
-let ResponseHasError = false;
+let ResponseHasError = false; 
+let isSearching = false;
+let searchScreen = undefined;
+
+function openSearchScreen() {
+    if (searchScreen) {
+        searchScreen.classList.remove('close-pop-up');
+    }
+}
+
+ 
 
 
 addEventListener('DOMContentLoaded', function() {
+
+    searchScreen = document.getElementById('pop-up-screen');    
+    this.document.getElementById('stop-searching').addEventListener('click', function() {
+        if (searchScreen) {
+            searchScreen.classList.add('close-pop-up');
+            isSearching = false;
+        }
+    });
+
+    
+ 
+
     let connecting_times = 0;
     let socket;
 
@@ -58,5 +80,6 @@ addEventListener('DOMContentLoaded', function() {
     loading.classList.add('hide-loading');
 
 })
+
 
 

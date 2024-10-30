@@ -55,4 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+ 
+    let searchButton = document.getElementById('search-button');
+
+    searchButton.addEventListener('click', function () {
+        if (isSearching) {
+            return;
+        }
+        
+        isSearching = true;
+        openSearchScreen();
+        
+        // TODO: Search for the near trees
+    });
+
+    
+
+
 })
