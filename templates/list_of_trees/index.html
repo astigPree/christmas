@@ -26,7 +26,7 @@
 
     <nav class="app-nav">
         <ul>
-            <li class="kavoon" id="near-trees">
+            <li class="kavoon app-nav-click" id="near-trees">
                 Malapit
             </li>
             <li class="kavoon" id="found-trees">
@@ -45,12 +45,15 @@
 
             <div class="trees" id="list-of-near-trees">
 
-                
+                <div class="list-empty" id="empty-near-trees">
+                    <img src="{% static 'media/tree-empty.svg' %}" alt="empty tree">
+                    <p class="kavoon">Walang malapit na puno dito, tara maghanap tayo!</p>
+                </div>
 
             </div>
 
             
-            <div class="trees" id="list-of-found-trees">
+            <div class="trees hide" id="list-of-found-trees">
                 
                 {% for tree in found_trees %}
                     <div class="tree" >
@@ -61,7 +64,7 @@
                     
             </div>
 
-            <div class="trees" id="list-of-not-found-trees">
+            <div class="trees hide" id="list-of-not-found-trees">
                 
                 {% for tree in not_found_trees %}
                     <img src="{% static 'media/unknown.svg' %}" alt="{{tree.name}}">

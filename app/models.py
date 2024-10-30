@@ -31,7 +31,6 @@ class Tree(models.Model):
             "latitude": 12.375345854355354, 
             "longitude": 123.63267251258442
         }
-
     """
     image_index = models.SmallIntegerField(null=True, blank=True) # Index of the image to use
     level = models.IntegerField(default=0, null=True, blank=True)
