@@ -4,10 +4,17 @@ let ResponseHasError = false;
 
 
 addEventListener('DOMContentLoaded', function() {
+    let connecting_times = 0;
     let socket;
 
     function connectWebSocket() {
+        if (connecting_times > 5) {
+            WebSocketHasError = true;
+            return;
+        }
+
         socket = new WebSocket('ws://' + window.location.host + '/ws/check/location/');
+        connecting_times++;
 
         socket.onopen = function(e) {
             console.log("[open] Connection established");

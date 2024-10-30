@@ -115,4 +115,16 @@ section{
     top: 0;
     left: 0;
     z-index: 2;
+    background-color: rgba(0, 0, 0, 0.393);
 }
+
+
+.pop-up-content{
+    width: 300px;
+    height: 270px;
+    background-color: rebeccapurple;
+}
+
+
+
+

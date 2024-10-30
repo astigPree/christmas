@@ -81,10 +81,10 @@ class Tree(models.Model):
         }
         
     def get_distance_of_user(self, lat, long):
-        return models_utils.haversine(self.location['lat'], self.location['long'], lat, long)
+        return models_utils.haversine(self.location['latitude'], self.location['longitude'], lat, long)
     
     def is_user_in_range(self, lat, long):
-        return models_utils.is_within_15_meters(self.location['lat'], self.location['long'], lat, long)
+        return models_utils.is_within_15_meters(self.location['latitude'], self.location['longitude'], lat, long)
     
     
 
