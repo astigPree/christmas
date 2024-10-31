@@ -84,7 +84,6 @@ class Tree(models.Model):
     def is_user_in_range(self, lat, long):
         return models_utils.is_within_15_meters(self.location['latitude'], self.location['longitude'], lat, long)
     
-    
 
 
 class Envelope(models.Model):

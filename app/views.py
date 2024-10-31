@@ -81,6 +81,35 @@ def visit_tree(request , tree_id):
     return render(request, 'visit_tree/index.html', context)
 
 
+def rename_tree(request , tree_id):
+    context = {
+        'has_error' : False
+    }
+
+    try:
+
+        if not tree_id:
+            return JsonResponse({
+                'error' : 'Missing tree_id',
+                'tree_id' : tree_id
+            }, status=400)
+
+
+        tree = Tree.objects.filter(tree_id=tree_id , is_found=False).first()
+
+        if not tree:
+            return JsonResponse({
+                'error' : 'Tree not found or Already Found',
+                'tree_id' : tree_id
+            }, status=404)
+
+        context['tree'] = tree.get_information()
+    
+    except Exception as e:
+        print(f"[] Error : {e}[]")
+        context['has_error'] = True
+    
+    return render(request, 'rename_tree/index.html', context)
 
 
 @api.get('/nearby_trees')

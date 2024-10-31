@@ -3,8 +3,8 @@
 
 
 {% block head_block %}
-    <link rel="stylesheet" href="{% static 'css/visit_tree/styles.css' %}">
-    <script src="{% static 'scripts/visit_tree/scripts.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/rename_tree/styles.css' %}">
+    <script src="{% static 'scripts/rename_tree/scripts.js' %}" defer></script>
 {% endblock head_block %}
 
 
@@ -18,7 +18,10 @@
     <div class="christmas-tree" style="background-image: url({% static 'media/christmas-tree-drop-shadow.png' %});">
         
     </div>
-
+    <form action="">
+        <input type="text" name="name" class="kavoon" id="name" placeholder="Pangalan ng Puno?">
+        <input type="submit" value="Ipakita Sa Lahat"  class="kavoon submit-btn">
+    </form>
 
 
 {% endblock content_block %}
