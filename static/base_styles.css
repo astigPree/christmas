@@ -185,9 +185,12 @@ section{
 
 
 .search-icon{
-    animation: searching 5s infinite;
+
 }
 
+.searching-style{
+    animation: searching 5s infinite;
+}
 
 
 

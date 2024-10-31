@@ -23,8 +23,9 @@ def haversine(lon1, lat1, lon2, lat2):
 
 # distance = haversine(lon1, lat1, lon2, lat2)
 
+DISTANCE = 50
 
-def is_within_15_meters(lon1, lat1, lon2, lat2):
+def is_within_meters(lon1, lat1, lon2, lat2):
     # Earth’s radius in meters
     R = 6371000
 
@@ -44,5 +45,5 @@ def is_within_15_meters(lon1, lat1, lon2, lat2):
     distance = R * c
 
     # Check if distance is within 15 meters
-    return distance <= 15
+    return distance <= DISTANCE
 
