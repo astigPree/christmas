@@ -7,8 +7,13 @@ from django.http import HttpResponse, JsonResponse
 
 from .models import Tree , Envelope, TemporaryUser
 
+
 from uuid import uuid4
 import json
+
+from ninja import NinjaAPI
+
+api = NinjaAPI()
 
 # Create your views here.
 
@@ -43,16 +48,36 @@ def list_of_trees(request):
     return render(request, 'list_of_trees/index.html', context)
 
 
+def visit_tree(request , tree_id):
+    context = {
+        'has_error' : False
+    }
+    
+    try: 
+        
+        tree = Tree.objects.filter(tree_id=tree_id).first()
+        context['tree'] = tree.get_information()
+        
+        
 
-def api_get_near_found_trees(request):
+    except Exception as e:
+        print(f"[] Error : {e}[]")
+        context['has_error'] = True
+        
+    return render(request, 'visit_tree/index.html', context)
+
+
+@api.get('/nearby_trees')
+def api_get_near_found_trees(request, latitude : float, longitude : float):
     try:
         
-        if request.method == 'POST':
+        if request.method == 'GET':
+            # http://127.0.0.1:8000/api/nearby_trees?latitude=12.375339279210461&longitude=123.63268216492332
             # {"latitude": 12.377170734417401, "longitude": 123.6177345739537}
-            data = json.loads(request.body)
+            # data = json.loads(request.body)
             
-            latitude = data.get('latitude', None)
-            longitude = data.get('longitude', None)
+            # latitude = data.get('latitude', None)
+            # longitude = data.get('longitude', None)
             
             if not latitude or not longitude:
                 return JsonResponse({
@@ -81,15 +106,15 @@ def api_get_near_found_trees(request):
         'error' : 'Invalid request method'
     }, status=400)
         
-
-def api_search_near_found_trees(request):
+@api.get('/search/trees')
+def api_search_near_found_trees(request, latitude : float, longitude : float):
     try:
-        if request.method == 'POST':
+        if request.method == 'GET':
             # {"latitude": 12.377170734417401, "longitude": 123.6177345739537}
-            data = json.loads(request.body)
+            # data = json.loads(request.body)
             
-            latitude = data.get('latitude', None)
-            longitude = data.get('longitude', None)
+            # latitude = data.get('latitude', None)
+            # longitude = data.get('longitude', None)
             
             if not latitude or not longitude:
                 return JsonResponse({
@@ -118,7 +143,6 @@ def api_search_near_found_trees(request):
     return JsonResponse({
         'error' : 'Invalid request method'
     }, status=400)
-
 
 
 
