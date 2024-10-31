@@ -60,7 +60,6 @@ class Tree(models.Model):
     def get_not_found_information(self):
         return {
             'name': self.name,
-            'tree_id': self.tree_id, 
             'image_index': self.image_index, 
             'level' : self.level,
             'created_at': self.created_at,

@@ -3,7 +3,8 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [ 
-    path('', views.list_of_trees, name='list_of_trees'),
+    path('', views.list_of_trees, name='list_of_trees'), 
+    path('visit/<str:tree_id>/', views.visit_tree, name='visit_tree'),
 ]
 
 

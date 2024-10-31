@@ -55,9 +55,23 @@ def visit_tree(request , tree_id):
     
     try: 
         
-        tree = Tree.objects.filter(tree_id=tree_id).first()
-        context['tree'] = tree.get_information()
+        if not tree_id:
+            return JsonResponse({
+                'error' : 'Missing tree_id',
+                'tree_id' : tree_id
+            }, status=400)
+            
         
+        tree = Tree.objects.filter(tree_id=tree_id , is_found=True).first()
+        
+        if not tree:
+            return JsonResponse({
+                'error' : 'Tree not found',
+                'tree_id' : tree_id
+            }, status=404)
+        
+        
+        context['tree'] = tree.get_information()
         
 
     except Exception as e:
@@ -65,6 +79,8 @@ def visit_tree(request , tree_id):
         context['has_error'] = True
         
     return render(request, 'visit_tree/index.html', context)
+
+
 
 
 @api.get('/nearby_trees')

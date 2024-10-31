@@ -56,7 +56,7 @@
             <div class="trees hide" id="list-of-found-trees">
                 
                 {% for tree in found_trees %}
-                    <div class="tree" >
+                    <div class="tree" onclick="window.location.href='{% url 'visit_tree' tree.tree_id %}'" >
                         <img src="{% static 'media/tree-' %}{{ tree.image_index }}.svg" alt="{{tree.name}}">
                         <p class="tree-name kavoon">{{tree.name}}</p>
                     </div>
