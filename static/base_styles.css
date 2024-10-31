@@ -19,29 +19,31 @@ section{
     height: 100svh;
     display: flex;
     flex-direction: column; 
+    overflow: hidden; /* This ensures the content within the section doesn't overflow */
+    position: relative; /* Set relative position for section */
 }
 
 
 
 .background-image {
-    width: clamp(900px, 100%, 100%);
-    height: 100vh; /* Ensure the height stays fixed */
-    position: absolute;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed position to stay in the same place */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2; /* Ensure it's behind the overlay */
-    background-size: cover;
-    background-position: center;
-    align-self: center;
-    justify-self: center;
+    object-fit: cover; /* Ensure the image covers the container */
+    overflow: hidden; /* Hide overflow */
+    background-size: cover; /* Cover container */
 }
 
 
 
+
+
 .background-image-cover {
-    background-color: #635421;
-    content: "";
+    background-color: #635421; 
     position: absolute;
     top: 0;
     left: 0;
